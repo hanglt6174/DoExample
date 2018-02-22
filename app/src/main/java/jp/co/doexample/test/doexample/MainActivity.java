@@ -4,6 +4,9 @@ import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.util.logging.Logger;
 
 public class MainActivity extends FragmentActivity implements TopFragment.OnFragmentInteractionListener, MainFragment.OnFragmentInteractionListener {
 
@@ -30,10 +33,9 @@ public class MainActivity extends FragmentActivity implements TopFragment.OnFrag
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        if (outState == null) {
+        if (outState.isEmpty()) {
             outState = new Bundle();
         }
-        outState.putString("test", "test");
         super.onSaveInstanceState(outState);
     }
 
